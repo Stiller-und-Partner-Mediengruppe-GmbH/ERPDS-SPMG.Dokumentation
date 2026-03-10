@@ -1,0 +1,19 @@
+:doctype: book
+:toc: macro
+:source-highlighter: rouge
+:icons: font
+// Lade die entsprechende Kopfzeile (kopfzeile_diplomarbeit_aul, ..._hif oder ..._kolleg)
+//:header_image: kopfzeile_diplomarbeit_aul.png
+:pdf-page-size: a4
+:lang: DE
+:hyphens:
+
+# Einleitung und Systemarchitektur
+In diesem Kapitel werden die Einleitung und die Systemarchitektur der Software beschrieben. Es werden die Ziele und Anforderungen der Software definiert, sowie die grundlegende Architektur und die verwendeten Technologien erläutert.
+
+== Einleitung
+Das Ziel dieses Projektes ist die Entwicklung eines Betriebsinternen Enterprise Resource Planning und Dispatch Services Systems für das Unternehmen SuP Mediengruppe GmbH. Das System soll die internen Geschäftsprozesse zentralisieren, automatisieren und für die Mitarbeiter zugänglich zu machen. Zusätzlich soll das System die Kommunikation sowohl zwischen den einzelnen Abteilungen aber auch mit dem Kunden einfacher gestalten. 
+
+Die Software soll hierbei folgende Funktionen erfüllen welche auch in den jeweiligen Kapiteln näher erläutert werden:
+
+* HR Management/Compliance und Finance
