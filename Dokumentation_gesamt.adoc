@@ -11,4 +11,12 @@
 
 toc::[]
 
-include::
+include:: intro_architecture.adoc[]
+
+include:: Complience.adoc[]
+
+include:: Operations_Production_ProjectManagement.adoc[]
+
+include:: Operations_FacilltyManagement_SecurityOps.adoc[]
+
+include:: Backend.adoc[]
