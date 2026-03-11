@@ -1,9 +1,213 @@
 :doctype: book
 :toc: macro
-:source-highlighter: rouge
+:source-highlighter: highlightjs
 :icons: font
 // Lade die entsprechende Kopfzeile (kopfzeile_diplomarbeit_aul, ..._hif oder ..._kolleg)
 //:header_image: kopfzeile_diplomarbeit_aul.png
 :pdf-page-size: a4
 :lang: DE
 :hyphens:
+:asciidoctor-diagram:
+
+= Backend
+
+Das Backend ist das Herzstück unserer Anwendung, hier wird die gesamte Funktionalität implementiert, welche in den vorherigen Abschnitten beschrieben wurden. Ganz oben steht der ASP.NET Core Server, welcher nicht nur die API-Endpunkte bereitstellt, sondern auch die gesamte Geschäftslogik und Datenverarbeitung übernimmt. Er kommuniziert mit der Datenbank, um Informationen zu speichern und abzurufen, und stellt sicher, dass die Authentifizierung und Autorisierung korrekt gehandhabt werden. 
+
+== Architektur Diagramm (ASP & React)
+
+
+[plantuml, target=architecture-diagram, format=svg]
+....
+@startuml
+skinparam componentStyle uml2
+skinparam shadowing false
+
+package "Client Side (React Frontend)" {
+    [<&lock-locked> Dashboard\n(Intern)] as Dashboard #A9DCDF
+    [Webseite/Shop/Karriere\n(Extern)] as External #FDE994
+}
+
+node "Server Side" {
+    [ASP.NET Core Server] as ASPServer #D5E8D4
+}
+
+database "Datenbank" as DB #F8CECC
+
+Dashboard -[#0077BE]down-> ASPServer : Authentifizierte API
+External -[#E67E22]down-> ASPServer : Öffentliche API
+ASPServer -down-> DB : SQL / EF Core
+
+@enduml
+....
+
+== ER-Diagramm des Datenmodells
+
+[plantuml, target=relationship-diagram, format=svg]
+....
+@startuml
+package ERPDS {
+    package Domain {
+        package Entities {
+            
+            class Project {
+                + Guid Id
+                + string Title
+                + decimal TotalBudget
+                + List<Milestone> Milestones
+                + List<ProjectNote> Notes
+                + double CalculateOverallProgress()
+                + decimal GetEstimateAtCompletion()
+            }
+
+            class Milestone {
+                + int Id
+                + string Title
+                + DateTime DueDate
+                + List<WorkPackage> WorkPackages
+                + double GetMilestoneProgress()
+            }
+
+            class ProjectNote {
+            }
+
+            abstract class ApplicationUser {
+                + string Id
+                + string FullName
+                + decimal BaseRate
+                + UserType Type
+                + bool TwoFactorEnabled
+                + List<TimeEntry> TimeLogs
+            }
+
+            class InternalEmployee {
+                + string EmployeeNumber
+                + string Department
+                + decimal AnnualSextile // Jahressechstel
+            }
+
+            class ExternalFreelancer {
+                + string CompanyName
+                + string ContractReference
+            }
+
+            class WorkPackage {
+                + int Id
+                + string Title
+                + bool IsCompleted
+                + decimal PlannedBudget
+                + decimal ActualCosts
+                + DateTime DueDate
+                + void MarkAsCompleted()
+            }
+
+            class TimeEntry {
+                + int Id
+                + DateTime StartTime
+                + DateTime EndTime
+                + double Hours
+                + decimal CalculatedCosts
+                + void ApplySurcharges(decimal rate)
+            }
+
+            ' Beziehungen
+            Project "1" *-- "many" Milestone
+            Project "1" *-- "many" ProjectNote
+            Milestone "1" *-- "many" WorkPackage
+            WorkPackage "1" -- "many" TimeEntry
+            ApplicationUser "1" -- "many" TimeEntry
+            
+            ' Vererbung
+            ApplicationUser <|-- InternalEmployee
+            ApplicationUser <|-- ExternalFreelancer
+        }
+    }
+}
+@enduml
+....
+
+== Klassendiagramm der Hauptentitäten
+
+[plantuml, target=class-diagram, format=svg]
+....
+@startuml
+!theme plain
+skinparam Linetype ortho
+
+package "ERPDS Database Schema" {
+
+    entity "Projects" as Projects {
+        * ProjectId : GUID <<PK>>
+        --
+        Title : VARCHAR(255)
+        TotalBudget : DECIMAL(18,2)
+        StartDate : DATETIME
+        EndDate : DATETIME
+        OverallProgress : FLOAT
+        SysStartTime : DATETIME2 <<Generated>>
+        SysEndTime : DATETIME2 <<Generated>>
+    }
+
+    entity "Users" as Users {
+        * UserId : NVARCHAR(450) <<PK>>
+        --
+        FullName : VARCHAR(255)
+        UserType : INT (Internal/External)
+        BaseRate : DECIMAL(18,2)
+        TwoFactorSecret : VARCHAR(MAX)
+    }
+
+    entity "Milestones" as Milestones {
+        * MilestoneId : INT <<PK>>
+        --
+        ProjectId : GUID <<FK>>
+        Title : VARCHAR(255)
+        DueDate : DATETIME
+        IsReached : BIT
+    }
+
+    entity "ProjectNotes" as ProjectNotes {
+        * NoteId : INT <<PK>>
+        --
+        ProjectId : GUID <<FK>>
+        AuthorId : NVARCHAR(450) <<FK>>
+        Content : TEXT
+        IsPrivate : BIT
+        CreatedAt : DATETIME
+    }
+
+    entity "WorkPackages" as WorkPackages {
+        * WPId : INT <<PK>>
+        --
+        MilestoneId : INT <<FK>>
+        Title : VARCHAR(255)
+        Description : TEXT
+        PlannedBudget : DECIMAL(18,2)
+        ActualCosts : DECIMAL(18,2)
+        IsCompleted : BIT
+        DueDate : DATETIME
+    }
+
+    entity "TimeEntries" as TimeEntries {
+        * EntryId : INT <<PK>>
+        --
+        UserId : NVARCHAR(450) <<FK>>
+        ProjectId : GUID <<FK>>
+        WPId : INT <<FK>>
+        StartTime : DATETIME
+        EndTime : DATETIME
+        Hours : FLOAT
+        CalculatedCosts : DECIMAL(18,2)
+    }
+
+    ' Beziehungen (Relationships)
+    Projects ||--o{ Milestones : "contains"
+    Projects ||--o{ ProjectNotes : "has"
+    Users ||--o{ ProjectNotes : "writes"
+    Milestones ||--o{ WorkPackages : "consists of"
+    WorkPackages ||--o{ TimeEntries : "assigned to"
+    Users ||--o{ TimeEntries : "records"
+    Projects ||--o{ TimeEntries : "tracks time for"
+
+}
+@enduml
+....

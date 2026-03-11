@@ -11,12 +11,12 @@
 
 toc::[]
 
-include:: intro_architecture.adoc[]
+include::Intro_architecture.adoc[leveloffset=+1]
 
-include:: Complience.adoc[]
+include::Complience_HR_Finance.adoc[leveloffset=+1]
 
-include:: Operations_Production_ProjectManagement.adoc[]
+include::Operations_Production_ProjectManagement.adoc[leveloffset=+1]
 
-include:: Operations_FacilltyManagement_SecurityOps.adoc[]
+include::Operatopns_FacilityManagement_SecurityOps.adoc[leveloffset=+1]
 
-include:: Backend.adoc[]
+include::Backend.adoc[leveloffset=+1]

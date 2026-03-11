@@ -1,14 +1,4 @@
-:doctype: book
-:toc: macro
-:source-highlighter: rouge
-:icons: font
-// Lade die entsprechende Kopfzeile (kopfzeile_diplomarbeit_aul, ..._hif oder ..._kolleg)
-//:header_image: kopfzeile_diplomarbeit_aul.png
-:pdf-page-size: a4
-:lang: DE
-:hyphens:
-
-# Einleitung und Systemarchitektur
+= Einleitung und Systemarchitektur
 In diesem Kapitel werden die Einleitung und die Systemarchitektur der Software beschrieben. Es werden die Ziele und Anforderungen der Software definiert, sowie die grundlegende Architektur und die verwendeten Technologien erläutert.
 
 == Einleitung
