@@ -19,3 +19,7 @@ git add -A
 git commit -m "your commit message"
 git push
 ```
+## Hinweis zu commits
+Um die Struckurierung der Commits so einfach wie möglich zu gestalten werden Collaborators gebeten bei ihren Messages folgendes Schema beizubehalten 
+
+> Update {Datum}_{Sequenznummer (ab dem zweiten Commit)}: {significant change description}
