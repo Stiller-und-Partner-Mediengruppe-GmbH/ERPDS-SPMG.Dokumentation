@@ -7,3 +7,11 @@ Das Ziel dieses Projektes ist die Entwicklung eines Betriebsinternen Enterprise 
 Die Software soll hierbei folgende Funktionen erfüllen welche auch in den jeweiligen Kapiteln näher erläutert werden:
 
 * HR Management/Compliance und Finance
+
+* Operations/Project Management
+
+* Operations/Facility Management and Security Operations
+
+* Customer Service/Customer Relationship Management
+
+Anschließend werden die Backend- und Frontend-Architektur beschrieben. 

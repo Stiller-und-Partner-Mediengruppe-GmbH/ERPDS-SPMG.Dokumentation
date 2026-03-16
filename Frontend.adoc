@@ -1,0 +1,87 @@
+= Frontend
+
+Das Frontend ist das Aushängeschild der Software und ermöglicht den Benutzern die Interaktion mit dem System. Es ist wichtig, dass das Frontend benutzerfreundlich, intuitiv und ansprechend gestaltet ist, um eine positive Benutzererfahrung zu gewährleisten.
+
+Hierbei ist anzumerken, dass das Frontend nicht nur für die Mitarbeiter der SuP Mediengruppe GmbH zugänglich sein soll, sondern auch für die Kunden. Daher muss das Frontend sowohl die internen Geschäftsprozesse als auch die Kundeninteraktionen berücksichtigen und entsprechend gestaltet werden.
+[plantuml, target=architecture-diagram, format=svg]
+....
+@startuml
+skinparam componentStyle uml2
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+' Farben über Stereotypen
+skinparam component {
+    BackgroundColor<<Internal>> #A9DCDF
+    BackgroundColor<<External>> #FDE994
+    BackgroundColor<<Server>> #D5E8D4
+}
+skinparam databaseBackgroundColor #F8CECC
+
+package "Client Side (React Frontend)" {
+    component "<&lock-locked> Dashboard\n(Intern)" as Dashboard <<Internal>>
+    component "Kunden- & Karriereportal\n(Extern)" as External <<External>>
+}
+
+node "Server Side" {
+    component "ASP.NET Core Server\n(Business Logic)" as ASPServer <<Server>>
+}
+
+database "Datenbank" as DB
+
+' Funktionslisten als Notizen rechts an die Komponenten
+note left of Dashboard
+  **Funktionen:**
+  * Personalverwaltung
+  * Schichtplanung
+  * Bestandsmanagement
+  * Umsatzstatistiken
+end note
+
+note right of External
+  **Funktionen:**
+  * Webshop (Bestellungen)
+  * Produktkatalog
+  * Job-Bewerbungen
+  * Kundenprofil (Loyalty)
+end note
+
+note right of ASPServer
+  **Backend Logik:**
+  * Auth & Identity (JWT)
+  * Payment Processing
+  * Order Management
+  * Analytics Engine
+end note
+
+' Beziehungen
+Dashboard -[#0077BE]down-> ASPServer : [Authorized]
+External -[#E67E22]down-> ASPServer : [Public/User]
+ASPServer -down-> DB : EF Core
+
+@enduml
+....
+
+== Technologien und Frameworks
+
+== Internes Dashboard
+=== Design und Benutzererfahrung
+
+=== Responsives Design
+
+=== Barrierefreiheit
+
+=== Sicherheit im Frontend
+
+=== Integration mit dem Backend
+
+== Externes Kundenportal und Webshop
+=== Design und Benutzererfahrung
+
+=== Responsives Design
+
+=== Barrierefreiheit
+
+=== Sicherheit im Frontend
+
+=== Integration mit dem Backend

@@ -8,6 +8,7 @@
 :toc-title: Inhaltsverzeichnis
 :lang: DE
 :hyphens:
+:allow-uri-read:
 
 toc::[]
 
@@ -19,4 +20,8 @@ include::Operations_Production_ProjectManagement.adoc[leveloffset=+1]
 
 include::Operatopns_FacilityManagement_SecurityOps.adoc[leveloffset=+1]
 
-include::Backend.adoc[leveloffset=+1]
+include::CS_CRM.adoc[leveloffset=+1]
+
+include::Backend.adoc[leveloffset=+1] 
+
+include::Frontend.adoc[leveloffset=+1]

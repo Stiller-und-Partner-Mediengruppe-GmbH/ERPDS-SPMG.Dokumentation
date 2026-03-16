@@ -1,0 +1,9 @@
+= Customer Service/Customer Relationship Management
+
+Mit diesem Modul soll nicht nur die Kommunikation mit dem Kunden vereinfacht werden, sondern dem Unternehmen auch die Möglichkeit gegeben werden, die Kundenzufriedenheit einfach und übersichtlich zu messen und darzustellen. Hierfür sollen Funktionen wie die Erfassung von Kundenanfragen, die Verwaltung von Kundeninformationen und die Analyse von Kundenzufriedenheitsdaten implementiert werden. Ziel ist es, die Kundenbindung zu stärken und die Servicequalität kontinuierlich zu verbessern.
+
+== Customer Service
+In diesem Abschnitt werden die Funktionen und Prozesse beschrieben, die sich auf den Kundenservice beziehen. Dazu gehören die Erfassung von Kundenanfragen unddie Verwaltung von Kundeninformationen. 
+
+== Customer Relationship Management
+In diesem Abschnitt werden die Funktionen und Prozesse beschrieben, die sich auf das Customer Relationship Management beziehen. Dazu gehören die Analyse von Kundenzufriedenheitsdaten und die Maßnahmen zur Verbesserung der Kundenbindung.
