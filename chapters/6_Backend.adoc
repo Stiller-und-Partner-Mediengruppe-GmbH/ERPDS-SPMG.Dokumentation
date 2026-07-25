@@ -1,19 +1,8 @@
-:doctype: book
-:toc: macro
-:source-highlighter: highlightjs
-:icons: font
-// Lade die entsprechende Kopfzeile (kopfzeile_diplomarbeit_aul, ..._hif oder ..._kolleg)
-//:header_image: kopfzeile_diplomarbeit_aul.png
-:pdf-page-size: a4
-:lang: DE
-:hyphens:
-:asciidoctor-diagram:
-
-= Backend
+== Backend
 
 Das Backend ist das Herzstück unserer Anwendung, hier wird die gesamte Funktionalität implementiert, welche in den vorherigen Abschnitten beschrieben wurden. Ganz oben steht der ASP.NET Core Server, welcher nicht nur die API-Endpunkte bereitstellt, sondern auch die gesamte Geschäftslogik und Datenverarbeitung übernimmt. Er kommuniziert mit der Datenbank, um Informationen zu speichern und abzurufen, und stellt sicher, dass die Authentifizierung und Autorisierung korrekt gehandhabt werden. 
 
-== Architektur Diagramm (ASP & React)
+=== Architektur Diagramm (ASP & React)
 
 
 [plantuml, target=architecture-diagram, format=svg]
@@ -40,7 +29,7 @@ ASPServer -down-> DB : SQL / EF Core
 @enduml
 ....
 
-== ER-Diagramm des Datenmodells
+=== ER-Diagramm des Datenmodells
 
 [plantuml, target=relationship-diagram, format=svg]
 ....
@@ -125,7 +114,7 @@ package ERPDS {
 @enduml
 ....
 
-== Klassendiagramm der Hauptentitäten
+=== Klassendiagramm der Hauptentitäten
 
 [plantuml, target=class-diagram, format=svg]
 ....

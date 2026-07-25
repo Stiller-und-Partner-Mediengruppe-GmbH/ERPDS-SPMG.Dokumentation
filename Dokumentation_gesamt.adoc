@@ -1,27 +1,71 @@
 :doctype: book
 :toc: macro
-:source-highlighter: rouge
+:toclevels: 5
+:source-highlighter: highlight.js
 :icons: font
-// Lade die entsprechende Kopfzeile (kopfzeile_diplomarbeit_aul, ..._hif oder ..._kolleg)
-//:header_image: kopfzeile_diplomarbeit_aul.png
+:pdf-theme: Dokumentation_gesamt.yml
+:imagesdir: images
 :pdf-page-size: a4
-:toc-title: Inhaltsverzeichnis
+:toc-title: I. Inhaltsverzeichnis
 :lang: DE
 :hyphens:
-:allow-uri-read:
+:author: Sebastian Andreas Stiller
+:docdate: {docdate}
+:title: Enterprise Resource Planing and Dispatch Service der Stiller und Partner Mediengruppe GmbH/Holding (SPMG)
+:title-logo-image: image:logo.svg[pdfwidth=100, align=center]
+:sectnums:
+:sectnumlevels: 0
+:title-page:
+:chapter-label:
 
-toc::[]
 
-include::Intro_architecture.adoc[leveloffset=+1]
+= Enterprise Resource Planing and Dispatch Service der Stiller und Partner Mediengruppe GmbH/Holding (SPMG)
+{author} +
+In der Fassung vom {docdate}
 
-include::Complience_HR_Finance.adoc[leveloffset=+1]
+toc::[level=3]
 
-include::Operations_Production_ProjectManagement.adoc[leveloffset=+1]
+== II. Vorwort
+Die Stiller und Partner Mediengruppe GmbH/Holding (SPMG) ist ein innovatives Medien und Unterhaltungsunternehmen, das sich auf die Entwicklung und Produktion von hochwertigen Multi-Medialen Inhalten spezialisiert hat. In diesem Dokument werden die genauen Pläne und Ziele zur Gründung der SPMG dargelegt. Hier wird die Geschichte hinter der Idee, die Visionen, der Aufbau und unser Auftrag als Dienstleister und Arbeitgeber beschrieben. Es werden die Produkte und Projekte vorgestellt, welche unser Kerngeschäft bilden, sowie die Werte, welche wir als Unternehmen vertreten. Zudem werden die Ziele und Strategien erläutert, welche wir verfolgen, um unsere Vision zu verwirklichen. Dieses Dokument dient als Leitfaden für die Gründung und Entwicklung der SPMG und soll potenziellen Investoren, Partnern und Mitarbeitern einen umfassenden Einblick in unser Unternehmen geben.
 
-include::Operatopns_FacilityManagement_SecurityOps.adoc[leveloffset=+1]
+=== II.1 Haftung und Geheimhaltung
+Die Informationen in diesem Dokument sind vertraulich und dürfen nicht ohne ausdrückliche schriftliche Genehmigung der Stiller und Partner Mediengruppe GmbH/Holding (SPMG), vertreten durch den Gründer und Chief Creative Officer (CCO) **Sebastian Andreas Stiller**, an Dritte weitergegeben oder veröffentlicht werden. 
 
-include::CS_CRM.adoc[leveloffset=+1]
+=== II.2 Urheberrecht und geistiges Eigentum
 
-include::Backend.adoc[leveloffset=+1] 
+**Alle Inhalte**, einschließlich, aber nicht beschränkt auf **Texte**, **Grafiken**, **Bilder**, **Logos**, **Marken**, **Designs**, **Software** und andere Materialien in diesem Dokument oder anderen Veröffentlichungen sind Eigentum der SPMG, vertreten durch den Gründer und CCO **Sebastian Andreas Stiller**, und sind durch Urheberrechtsgesetze und andere geistige Eigentumsrechte geschützt. 
 
-include::Frontend.adoc[leveloffset=+1]
+Die SPMG, vertreten durch den Gründer und CCO **Sebastian Andreas Stiller**, behält sich alle Rechte vor, die nicht ausdrücklich in diesem Dokument gewährt werden. Jede unautorisierte Nutzung, Vervielfältigung, Verbreitung oder Veröffentlichung von Inhalten aus diesem Dokument oder anderen Veröffentlichungen der SPMG, vertreten durch den Gründer und CCO **Sebastian Andreas Stiller**, ist strengstens untersagt und kann rechtliche Konsequenzen nach sich ziehen.
+
+=== II.3 Marken und Logos
+SPMG und das SPMG-Logo sind eingetragene Marken der Stiller und Partner Mediengruppe GmbH/Holding (SPMG), vertreten durch den Gründer und CCO **Sebastian Andreas Stiller**. Alle anderen in diesem Dokument oder anderen Veröffentlichungen der SPMG, vertreten durch den Gründer und CCO **Sebastian Andreas Stiller**, erwähnten Markennamen, Produktnamen, Dienstleistungsmarken oder Firmennamen sind Eigentum ihrer jeweiligen Inhaber.
+
+=== II.4 Haftungsausschluss
+Die Informationen in diesem Dokument werden "wie besehen" bereitgestellt, ohne jegliche ausdrückliche oder stillschweigende Gewährleistung. Die SPMG, vertreten durch den Gründer und CCO **Sebastian Andreas Stiller**, übernimmt keine Verantwortung für die Genauigkeit, Vollständigkeit oder Aktualität der Informationen in diesem Dokument oder anderen archivierten Veröffentlichungen. Jegliche Nutzung der Informationen in diesem Dokument ab Veröffentlichung erfolgt auf eigenes Risiko.
+
+== III. Kontakt 
+Für weitere Informationen oder Anfragen bezüglich der Stiller und Partner Mediengruppe GmbH/Holding (SPMG) können Sie uns unter den folgenden Kontaktdaten erreichen:
+
+Ansprechpartner: **Sebastian Andreas Stiller** (Gründer und Chief Creative Officer - CCO)
+
+* **Adresse**: To be Announced
+* **Telefon**: +43 660 2084555
+* **E-Mail**: mailto:kontakt@sebastianstiller.at[kontakt@sebastianstiller.at]
+
+
+
+include::chapters/1_Intro_architecture.adoc[]
+
+include::chapters/2_Complience_HR_Finance.adoc[]
+
+include::chapters/3_Operations_Production_ProjectManagement.adoc[]
+
+include::chapters/4_Operatopns_FacilityManagement_SecurityOps.adoc[]
+
+include::chapters/5_CS_CRM.adoc[]
+
+include::chapters/6_Backend.adoc[]
+
+include::chapters/7_Frontend.adoc[]
+
+include::chapters/8_Mobile_Application.adoc[]
