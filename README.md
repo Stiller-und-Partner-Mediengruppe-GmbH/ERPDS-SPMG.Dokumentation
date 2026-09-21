@@ -1,7 +1,7 @@
-# ERP-DS SuP Mediengruppe  GmbH
+# ERP-DS Stiller und Partner Mediengruppe  GmbH
 In diesem Repository findet ihr die gesamte Dokumentation des ERP systems der Stiller und Partner Mediengruppe GmbH. 
 
-> zum Projekt: [Hier Klicken](https://github.com/BastisTech/ERPDS-SuP.git)
+> zum Projekt: [Hier Klicken](https://github.com/Stiller-und-Partner-Mediengruppe-GmbH/ERPDS-SPMG.Backend.git)
 
 ## Rechtliche Informationen
 ### Herausgeber/Urheber

@@ -1,1 +1,7 @@
 == Mobile Application "SPMG-MDT"
+Die Mobile Android Applikation "SPMG-MDT" ist das zentrale Arbeitswerkzeug der Mitarbeiter und bündelt die Grundlegenden Arbeitsabläufe im Unternehmen in eine zentrale und sichere App. 
+
+=== Software Stack
+Die App wurde Primär und Ausschließlich für Android Geräte mit Kotlin programmiert. 
+
+Hierbei wurde die IDE Android Studio verwendet
